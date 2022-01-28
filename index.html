@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHCDA</title>
+
+     <!--Font embed from google fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+         
+    <!--Costume Css-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="Images/logo.svg" type="image/x-icon">
+    
+</head>
+<body id="en">
+
+    <section id="Home">
+
+        <header>
+            <!--open menu-->
+            <div class="overlay" id="myNav">
+    
+                <!--Button to close the overlay navigation-->
+                <button href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</button>
+    
+                <!--Overlay Content-->
+                <div class="overlay-content">
+                    <a class="home" href="#">Home</a>
+                    <div class="right">
+                        <a href="#About">About</a>
+                        <a href="#Services">Services</a>
+                    </div>
+                    <div class="left">
+                        <a href="#Skills">Skills</a>
+                        <a href="#Works">Works</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Use any element to open/Show the overlay navigation menu -->
+            <span id="menuMhcda" onclick="openNav()"><img src="Images/logo.svg" alt=""></span>
+    
+    
+        </header>
+
+        <div id="main">
+            <div id="txts">
+                <h2>MHC<span id="da">DA</span></h2>
+                <p>Graphics Designer And Frontend Web developer.</p>
+            </div>
+            <div id="img">
+                <img src="Images/logo.svg" alt="logo">
+            </div>
+        </div>
+
+        <section id="Bottom">
+            <div class="language">
+                <a class="amh" href="amh/amhMhcda.html">አማርኛ</a>
+                <span>|</span>
+                <a id="Active" href="#">EN</a>
+            </div>
+            <div class="socail-contact">
+                <a class="ico" href="https://t.me/mhcdaeth" target="_blank"><i id="telegram" class="fab fa-telegram"></i></a>
+                <a class="ico" href="https://www.instagram.com/mhcdaeth/" target="_blank"><i id="instagram" class="fab fa-instagram"></i></a>
+                <a class="ico" href="https://twitter.com/MhcdaE/" target="_blank"><i id="twitter" class="fab fa-twitter"></i></a>
+                <a class="ico" href="https://www.facebook.com/profile.php?id=100072929034673" target="_blank"><i id="facebook" class="fab fa-facebook"></i></a>
+                <a class="ico" href="https://dribbble.com/mhcdaeth" target="_blank"><i id="dribbble" class="fab fa-dribbble"></i></a>
+            </div>
+        </section>
+
+    </section>
+
+    <section id="About">
+        <div id="txts">
+            <h2>About</h2>
+            <p>MHCDA, Ethiopian AD graphics, Motion Graphics and Frontend Web Developer and Designing Company.</p>    
+        </div>
+    </section>
+
+    <section id="Services">
+
+        <h2>Services</h2>
+
+        <div class="services">
+
+            <div class="graphicDesign">
+                <p>Graphic Design</p>
+            </div>
+    
+            <div class="branding">
+                <p>Branding</p>
+            </div>
+    
+            <div class="webDesign">
+                <p>Front-End Web Designing</p>
+            </div>
+
+        </div>
+
+       
+    </section>
+    
+    <section id="Skills">
+        <div class="title">
+            <h2>Skill</h2>
+        </div>
+
+        <div class="skills">
+
+            <div class="graphicDesign skilz">
+                <div class="skillAndPercent">
+                    <p class="name">Graphic Design</p>
+                    <p class="no">75%</p>
+                </div>
+                
+
+                <div class="border">
+                    <div class="bar graphic"></div>
+                </div>
+            </div>
+
+            <div class="logoMotion skilz">
+                <div class="skillAndPercent">
+                    <p class="name">Logo Motion Graphic Design</p>
+                    <p class="no">85%</p>
+                </div>
+                
+
+                <div class="border">
+                    <div class="bar logoGraphic"></div>
+                </div>
+            </div>
+
+            <div class="html skilz">
+                <div class="skillAndPercent">
+                    <p class="name">html</p>
+                    <p class="no">90%</p>
+                </div>
+                
+
+                <div class="border">
+                    <div class="bar html"></div>
+                </div>
+            </div>
+
+            <div class="css skilz">
+                <div class="skillAndPercent">
+                    <p class="name">css3</p>
+                    <p class="no">80%</p>
+                </div>
+                
+
+                <div class="border">
+                    <div class="bar css"></div>
+                </div>
+            </div>
+
+            <div class="logomotion skilz">
+
+                <div class="skillAndPercent">
+                    <p class="name">Bootstrap</p>
+                    <p class="no">80%</p>
+                </div>
+                
+
+                <div class="border">
+                    <div class="bar bootstrap"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Works">
+        <div class="title">
+            <h2>Works</h2>
+        </div>
+
+        <div class="showcase">
+            <div class="tab">
+                <button class="tablinks gBtn" onclick="openGD()">Graphic Design</button>
+                <button class="tablinks bBtn" onclick="openBD()">Branding Design</button>
+            </div>
+
+            <div class="tabcontent" id="graphicDesign">
+            
+                <div class="mySlides fade">
+                    <img src="Images/Graphic-Design/Afro.jpg" alt="">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="Images/Graphic-Design/Ermays.jpg" alt="">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="Images/Graphic-Design/Fkr.jpg" alt="">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="Images/Graphic-Design/GA.jpg" alt="">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="Images/Graphic-Design/Jadugar.jpg" alt="">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="Images/Graphic-Design/Jo-Ride.jpg" alt="">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="Images/Graphic-Design/KB.jpg" alt="">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="Images/Graphic-Design/Liben-Dish.jpg" alt="">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="Images/Graphic-Design/Nati.jpg" alt="">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="Images/Graphic-Design/Yesak.jpg" alt="">
+                </div>
+                
+            </div>
+
+            <div class="tabcontent" id="brandingDesign">
+
+                    <div class="col-1">
+                        <img class="1" src="Images/Brands/Yetebeb-Mead.svg" alt="">
+                        <img class="2" src="Images/Brands/Afro.svg" alt="">
+                        <img class="3" src="Images/Brands/Enat-Cafe.svg" alt="">
+
+                        <div class="col1-1">
+                            <img class="4" src="Images/Brands/Ermyas.svg" alt="">
+                            <img class="5" src="Images/Brands/Fkr.svg" alt="">
+                            <img class="6" src="Images/Brands/GA.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <img class="7" src="Images/Brands/Jadugar.svg" alt="">
+                        <img class="8" src="Images/Brands/Jo-Ride.svg" alt="">
+                        <img class="9" src="Images/Brands/KB.svg" alt="">
+                        <div class="col2-2">
+                            <img class="10" src="Images/Brands/Liben-Dish.svg" alt="">
+                            <img class="11" src="Images/Brands/Nati.svg" alt="">
+                            <img class="12" src="Images/Brands/Yesak.svg" alt="">
+                        </div>
+                   </div>
+                </div>
+                
+        </div>
+    </section>
+
+</body>
+
+<!-- Font Awsome Kit-->
+<script src="https://kit.fontawesome.com/e8b012efd0.js" crossorigin="anonymous"></script>
+
+<!--Java Script-->
+<script src="js/main.js"></script>
+</html>

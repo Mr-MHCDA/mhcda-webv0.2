@@ -1,0 +1,1219 @@
+:root {
+  --background-color: #555f61;
+  --font-and-ico-color: #c1c7c9;
+  --font-and-ico-color-active: #f2f3f4;
+  --da: #42434a;
+  --menu-bg: rgba(193, 199, 201, 0.729);
+  --dVersion-heder: #949aa1;
+}
+
+/*Local Fonts import*/
+@font-face {
+  font-family: "BoomBox";
+  src: url(../fonts/BOOMBOX.TTF);
+}
+
+@font-face {
+  font-family: "Tera";
+  src: url(../fonts/Tera-Regular.ttf);
+}
+
+#amh {
+  font-family: "Tera";
+}
+
+#amh h2, #amh p, #amh span, #amh button {
+  font-family: "Tera";
+}
+
+#en h2 {
+  font-family: "BoomBox";
+}
+
+#en p {
+  font-family: 'Libre Baskerville', serif;
+}
+
+html,
+body {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  /* Cursors*/
+  cursor: url(../Cursors/cur/Normal.cur), auto;
+  /* Scrollbar Design */
+  /* Common font and style Properties */
+}
+
+html a:hover,
+html button:hover,
+body a:hover,
+body button:hover {
+  cursor: url(../Cursors/cur/Link-Select.cur), auto;
+}
+
+html ::-webkit-scrollbar,
+body ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+html ::-webkit-scrollbar-thumb,
+body ::-webkit-scrollbar-thumb {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#c1c7c9), to(#c1c7c9));
+  background-image: linear-gradient(#c1c7c9, #c1c7c9);
+  border-radius: 5px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+html ::-webkit-scrollbar-thumb:hover,
+body ::-webkit-scrollbar-thumb:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#c1c7c9));
+  background-image: linear-gradient(transparent, #c1c7c9);
+}
+
+html a,
+body a {
+  color: var(--font-and-ico-color);
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+html h2,
+body h2 {
+  color: var(--font-and-ico-color);
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+html h2 #da,
+body h2 #da {
+  color: var(--da);
+}
+
+html p,
+body p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.9rem;
+  color: var(--font-and-ico-color-active);
+  line-height: 40px;
+}
+
+html #txts,
+body #txts {
+  width: 80vw;
+}
+
+html button,
+body button {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.2rem;
+}
+
+html body,
+body body {
+  background-color: var(--background-color);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -ms-grid-rows: (100vh)[5];
+      grid-template-rows: repeat(5, 100vh);
+      grid-template-areas: "home home" "about about" "services services" "skills skills" "works works";
+  padding: 0 10%;
+}
+
+html body #Home,
+body body #Home {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: home;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (50%)[2];
+      grid-template-columns: repeat(2, 50%);
+  -ms-grid-rows: 10vh 85vh 5vh;
+      grid-template-rows: 10vh 85vh 5vh;
+  place-items: center;
+      grid-template-areas: "head head" "main main" "footer footer";
+}
+
+html body #Home header,
+body body #Home header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: head;
+  text-align: center;
+  margin-top: 5px;
+  z-index: 1;
+}
+
+html body #Home header #menuMhcda,
+body body #Home header #menuMhcda {
+  display: block;
+}
+
+html body #Home header .overlay,
+body body #Home header .overlay {
+  /* Height & Width depends on how you want to reveal the overlay (see js below) */
+  background-color: #c1c7c9;
+  background-color: rgba(193, 199, 201, 0.729);
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  top: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: fixed;
+  width: 0;
+  z-index: 1;
+  /* Position the content inside the overlay */
+}
+
+html body #Home header .overlay .overlay-content,
+body body #Home header .overlay .overlay-content {
+  margin-top: 30px;
+  position: relative;
+  text-align: center;
+  top: 20vh;
+  width: 100%;
+}
+
+html body #Home header .overlay .overlay-content a,
+body body #Home header .overlay .overlay-content a {
+  color: #f2f3f4;
+  display: block;
+  font-size: 1rem;
+  padding: 25px 8px;
+  margin: 0 10vw;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+html body #Home header .overlay .overlay-content a:hover,
+html body #Home header .overlay .overlay-content a:focus,
+body body #Home header .overlay .overlay-content a:hover,
+body body #Home header .overlay .overlay-content a:focus {
+  border: 1px solid #555f61;
+  border-radius: 15px;
+  color: #555f61;
+  font-size: 1.5rem;
+}
+
+html body #Home header .overlay .closebtn,
+body body #Home header .overlay .closebtn {
+  background-color: unset;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: #f2f3f4;
+  font-size: 30px;
+  padding: 0 5vw;
+  position: relative;
+  top: 10vh;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+html body #Home header .overlay .closebtn:hover,
+body body #Home header .overlay .closebtn:hover {
+  border-color: unset;
+  padding: 0 40vw;
+  color: #555f61;
+}
+
+html body #Home header span,
+body body #Home header span {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+html body #Home header span img,
+body body #Home header span img {
+  width: 80px;
+}
+
+html body #Home #main,
+body body #Home #main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: main;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html body #Home #main #img,
+body body #Home #main #img {
+  position: absolute;
+  z-index: -1;
+  opacity: 30%;
+  width: 100%;
+}
+
+html body #Home #main #img img,
+body body #Home #main #img img {
+  width: 100%;
+}
+
+html body #Home #Bottom,
+body body #Home #Bottom {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: footer;
+  text-align: center;
+  position: fixed;
+  margin-top: 95vh;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-image: -webkit-gradient(linear, left top, right top, from(#c1c7c900), color-stop(#42434aba), to(#c1c7c900));
+  background-image: linear-gradient(to right, #c1c7c900, #42434aba, #c1c7c900);
+  padding-top: 5px;
+  /* Noraml Social Media */
+  /* Hover Social Media */
+}
+
+html body #Home #Bottom .language,
+body body #Home #Bottom .language {
+  display: inline-block;
+}
+
+html body #Home #Bottom .language a:hover,
+body body #Home #Bottom .language a:hover {
+  border: 1px solid var(--font-and-ico-color);
+  border-radius: 3px;
+  color: var(--background-color);
+  padding: 0 10px;
+}
+
+html body #Home #Bottom .language .amh,
+body body #Home #Bottom .language .amh {
+  font-family: "Tera";
+}
+
+html body #Home #Bottom #Active,
+body body #Home #Bottom #Active {
+  border: 1px solid var(--font-and-ico-color);
+  background-color: var(--font-and-ico-color);
+  border-radius: 3px;
+  color: var(--background-color);
+  padding: 0 10px;
+}
+
+html body #Home #Bottom #Active:hover,
+body body #Home #Bottom #Active:hover {
+  color: var(--font-and-ico-color);
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: unset;
+}
+
+html body #Home #Bottom .socail-contact,
+body body #Home #Bottom .socail-contact {
+  display: inline-block;
+}
+
+html body #Home #Bottom .socail-contact a:hover,
+body body #Home #Bottom .socail-contact a:hover {
+  border: none;
+}
+
+html body #Home #Bottom .fab,
+body body #Home #Bottom .fab {
+  width: 20px;
+  margin: 0 3px;
+}
+
+html body #Home #Bottom #telegram, html body #Home #Bottom #instagram, html body #Home #Bottom #twitter, html body #Home #Bottom #facebook, html body #Home #Bottom #whatsapp, html body #Home #Bottom #dribbble,
+body body #Home #Bottom #telegram,
+body body #Home #Bottom #instagram,
+body body #Home #Bottom #twitter,
+body body #Home #Bottom #facebook,
+body body #Home #Bottom #whatsapp,
+body body #Home #Bottom #dribbble {
+  color: var(--dVersion-heder);
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+}
+
+html body #Home #Bottom #telegram:hover,
+body body #Home #Bottom #telegram:hover {
+  color: #00b7ff;
+}
+
+html body #Home #Bottom #instagram:hover,
+body body #Home #Bottom #instagram:hover {
+  color: #cf3f8e;
+}
+
+html body #Home #Bottom #twitter:hover,
+body body #Home #Bottom #twitter:hover {
+  color: #00b7ff;
+}
+
+html body #Home #Bottom #facebook:hover,
+body body #Home #Bottom #facebook:hover {
+  color: #5586f0;
+}
+
+html body #Home #Bottom #whatsapp:hover,
+body body #Home #Bottom #whatsapp:hover {
+  color: #97f804;
+}
+
+html body #Home #Bottom #dribbble:hover,
+body body #Home #Bottom #dribbble:hover {
+  color: #ee81ee;
+}
+
+html body #About,
+body body #About {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: about;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html body #Services,
+body body #Services {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: services;
+  display: -ms-grid;
+  display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 20% 80%;
+      grid-template-areas: "header header" "services services";
+  text-align: center;
+}
+
+html body #Services h2,
+body body #Services h2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: header;
+}
+
+html body #Services .services,
+body body #Services .services {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: services;
+}
+
+html body #Services .services .graphicDesign,
+html body #Services .services .branding,
+html body #Services .services .webDesign,
+body body #Services .services .graphicDesign,
+body body #Services .services .branding,
+body body #Services .services .webDesign {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: services;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  border: 1px solid var(--font-and-ico-color);
+  border-radius: 1rem;
+  margin-bottom: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  height: 20%;
+  font-size: 2rem;
+}
+
+html body #Services .services .graphicDesign p,
+html body #Services .services .branding p,
+html body #Services .services .webDesign p,
+body body #Services .services .graphicDesign p,
+body body #Services .services .branding p,
+body body #Services .services .webDesign p {
+  margin: 0;
+}
+
+html body #Services .services .graphicDesign:hover,
+html body #Services .services .branding:hover,
+html body #Services .services .webDesign:hover,
+body body #Services .services .graphicDesign:hover,
+body body #Services .services .branding:hover,
+body body #Services .services .webDesign:hover {
+  background-image: url(../Images/cards-background/card-bg.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border: unset;
+  height: 60%;
+}
+
+html body #Services .services .graphicDesign:hover p,
+html body #Services .services .branding:hover p,
+html body #Services .services .webDesign:hover p,
+body body #Services .services .graphicDesign:hover p,
+body body #Services .services .branding:hover p,
+body body #Services .services .webDesign:hover p {
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: var(--font-and-ico-color-active);
+}
+
+html body #Skills,
+body body #Skills {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: skills;
+  display: -ms-grid;
+  display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 20% 60%;
+      grid-template-areas: "title title" "skills skills";
+  place-content: center;
+}
+
+html body #Skills .title,
+body body #Skills .title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+}
+
+html body #Skills .title h2,
+body body #Skills .title h2 {
+  margin-bottom: 0;
+}
+
+html body #Skills .skills,
+body body #Skills .skills {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: skills;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: (20%)[5];
+      grid-template-rows: repeat(5, 20%);
+      grid-template-areas: "graphicDesign" "motionGraphic" "html" "css3" "bootstrap";
+}
+
+html body #Skills .skills p,
+body body #Skills .skills p {
+  margin: 0;
+}
+
+html body #Skills .skills .skilz,
+body body #Skills .skills .skilz {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 60% 40%;
+      grid-template-rows: 60% 40%;
+      grid-template-areas: "description" "border";
+}
+
+html body #Skills .skills .skilz .skillAndPercent,
+body body #Skills .skills .skilz .skillAndPercent {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: description;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80% 20%;
+      grid-template-columns: 80% 20%;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+      grid-template-areas: "name no";
+  overflow: hidden;
+}
+
+html body #Skills .skills .skilz .skillAndPercent p,
+body body #Skills .skills .skilz .skillAndPercent p {
+  font-size: 1.5rem;
+  color: var(--font-and-ico-color-active);
+}
+
+html body #Skills .skills .skilz .skillAndPercent .name,
+body body #Skills .skills .skilz .skillAndPercent .name {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: name;
+}
+
+html body #Skills .skills .skilz .skillAndPercent .no,
+body body #Skills .skills .skilz .skillAndPercent .no {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: no;
+  color: var(--font-and-ico-color);
+  text-align: end;
+}
+
+html body #Skills .skills .skilz .border,
+body body #Skills .skills .skilz .border {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: border;
+  background-color: var(--font-and-ico-color-active);
+  width: 100%;
+  border-radius: 10px;
+  height: 30%;
+}
+
+html body #Skills .skills .skilz .border .bar,
+body body #Skills .skills .skilz .border .bar {
+  background-color: var(--font-and-ico-color);
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+html body #Skills .skills .skilz .border .graphic,
+body body #Skills .skills .skilz .border .graphic {
+  width: 75%;
+}
+
+html body #Skills .skills .skilz .border .logoGraphic,
+body body #Skills .skills .skilz .border .logoGraphic {
+  width: 85%;
+}
+
+html body #Skills .skills .skilz .border .html,
+body body #Skills .skills .skilz .border .html {
+  width: 90%;
+}
+
+html body #Skills .skills .skilz .border .css,
+html body #Skills .skills .skilz .border .bootstrap,
+body body #Skills .skills .skilz .border .css,
+body body #Skills .skills .skilz .border .bootstrap {
+  width: 80%;
+}
+
+html body #Works,
+body body #Works {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: works;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 20% 60%;
+      grid-template-rows: 20% 60%;
+      grid-template-areas: "title" "showcase";
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+html body #Works .title,
+body body #Works .title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+}
+
+html body #Works .showcase,
+body body #Works .showcase {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: showcase;
+}
+
+html body #Works .showcase .tab,
+body body #Works .showcase .tab {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 48% 48%;
+      grid-template-columns: 48% 48%;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+      grid-template-areas: "btn1 btn2";
+  grid-column-gap: 4%;
+  margin-bottom: 10px;
+}
+
+html body #Works .showcase .tab button,
+body body #Works .showcase .tab button {
+  background-color: unset;
+  border: 1px solid var(--font-and-ico-color);
+  border-radius: 10px;
+  color: var(--font-and-ico-color);
+  padding: 14px 16px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-align: left;
+}
+
+html body #Works .showcase .tab button:hover,
+body body #Works .showcase .tab button:hover {
+  border: 1px solid var(--font-and-ico-color);
+  background-color: var(--font-and-ico-color);
+  border-radius: 0;
+  color: var(--background-color);
+}
+
+html body #Works .showcase .tab .active,
+body body #Works .showcase .tab .active {
+  background-color: var(--font-and-ico-color);
+}
+
+html body #Works .showcase .tabcontent,
+body body #Works .showcase .tabcontent {
+  padding: 6px 12px;
+  border-top: none;
+  -webkit-animation: fadeEffect 1s;
+          animation: fadeEffect 1s;
+}
+
+@-webkit-keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+html body #Works .showcase #graphicDesign,
+body body #Works .showcase #graphicDesign {
+  display: block;
+  height: 50vh;
+  max-width: 100vw;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+html body #Works .showcase #graphicDesign .mySlides,
+body body #Works .showcase #graphicDesign .mySlides {
+  display: none;
+}
+
+html body #Works .showcase #graphicDesign .mySlides img,
+body body #Works .showcase #graphicDesign .mySlides img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+html body #Works .showcase #graphicDesign .mySlides .text,
+body body #Works .showcase #graphicDesign .mySlides .text {
+  color: var(--font-and-ico-color);
+  font-size: 1rem;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+html body #Works .showcase #graphicDesign .fade,
+body body #Works .showcase #graphicDesign .fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+html body #Works .showcase #brandingDesign,
+body body #Works .showcase #brandingDesign {
+  display: none;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+      grid-template-areas: "col-1 col-2";
+  overflow: auto;
+  overflow-x: hidden;
+  height: 50vh;
+}
+
+html body #Works .showcase #brandingDesign .col-1,
+html body #Works .showcase #brandingDesign .col-2,
+body body #Works .showcase #brandingDesign .col-1,
+body body #Works .showcase #brandingDesign .col-2 {
+  text-align: center;
+}
+
+html body #Works .showcase #brandingDesign .col-1 img,
+html body #Works .showcase #brandingDesign .col-2 img,
+body body #Works .showcase #brandingDesign .col-1 img,
+body body #Works .showcase #brandingDesign .col-2 img {
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+html body #Works .showcase #brandingDesign .col-1,
+body body #Works .showcase #brandingDesign .col-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: col-1;
+}
+
+html body #Works .showcase #brandingDesign .col-2,
+body body #Works .showcase #brandingDesign .col-2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: col-2;
+}
+
+@media screen and (min-width: 768px) {
+  html ::-webkit-scrollbar-thumb,
+  body ::-webkit-scrollbar-thumb {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#555f61), to(#555f61));
+    background-image: linear-gradient(#555f61, #555f61);
+    border-radius: 5px;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  html ::-webkit-scrollbar-thumb:hover,
+  body ::-webkit-scrollbar-thumb:hover {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#555f61));
+    background-image: linear-gradient(transparent, #555f61);
+  }
+  html #menuMhcda img,
+  body #menuMhcda img {
+    display: none;
+  }
+  html h2,
+  body h2 {
+    color: var(--dVersion-heder);
+    text-transform: uppercase;
+  }
+  html h2 .da,
+  body h2 .da {
+    color: var(--da);
+  }
+  html p,
+  body p {
+    color: var(--background-color);
+  }
+  html a,
+  body a {
+    color: var(--background-color);
+  }
+  html body,
+  body body {
+    background-color: var(--font-and-ico-color);
+    padding: 0 3%;
+  }
+  html body #telegram, html body #instagram, html body #twitter, html body #facebook, html body #whatsapp, html body #dribbble,
+  body body #telegram,
+  body body #instagram,
+  body body #twitter,
+  body body #facebook,
+  body body #whatsapp,
+  body body #dribbble {
+    color: var(--font-and-ico-color);
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
+  }
+  html body #Home,
+  body body #Home {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: 10vh 85vh 5vh;
+        grid-template-rows: 10vh 85vh 5vh;
+        grid-template-areas: "head" "main" "footer";
+  }
+  html body #Home header,
+  body body #Home header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: head;
+    width: 100%;
+  }
+  html body #Home header .overlay,
+  body body #Home header .overlay {
+    width: 100%;
+    height: unset;
+    left: unset;
+    overflow-x: unset;
+    top: unset;
+    position: unset;
+  }
+  html body #Home header .overlay button,
+  body body #Home header .overlay button {
+    display: none;
+  }
+  html body #Home header .overlay .overlay-content,
+  body body #Home header .overlay .overlay-content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 40% 20% 40%;
+        grid-template-columns: 40% 20% 40%;
+    -ms-grid-rows: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "left center right";
+    top: unset;
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    z-index: 1;
+  }
+  html body #Home header .overlay .overlay-content a,
+  body body #Home header .overlay .overlay-content a {
+    display: inline-block;
+    padding: 0 10px;
+    margin: 0;
+    color: var(--background-color);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  html body #Home header .overlay .overlay-content a:hover,
+  body body #Home header .overlay .overlay-content a:hover {
+    border: 1px solid var(--font-and-ico-color);
+    background-color: var(--font-and-ico-color);
+    border-radius: 3px;
+    color: var(--dVersion-heder);
+    font-size: 1rem;
+  }
+  html body #Home header .overlay .overlay-content .right, html body #Home header .overlay .overlay-content .left,
+  body body #Home header .overlay .overlay-content .right,
+  body body #Home header .overlay .overlay-content .left {
+    display: inline-block;
+  }
+  html body #Home header .overlay .overlay-content .right,
+  body body #Home header .overlay .overlay-content .right {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: left;
+  }
+  html body #Home header .overlay .overlay-content .home,
+  body body #Home header .overlay .overlay-content .home {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: center;
+  }
+  html body #Home header .overlay .overlay-content .left,
+  body body #Home header .overlay .overlay-content .left {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: right;
+  }
+  html body #Home #main,
+  body body #Home #main {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: main;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 60% 40%;
+        grid-template-columns: 60% 40%;
+    -ms-grid-rows: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "text img";
+    width: 100%;
+  }
+  html body #Home #main #txts,
+  body body #Home #main #txts {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: text;
+    width: 75%;
+  }
+  html body #Home #main #img,
+  body body #Home #main #img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: img;
+    position: relative;
+    z-index: 1;
+    opacity: 100%;
+  }
+  html body #Home #Bottom,
+  body body #Home #Bottom {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: footer;
+    background-image: unset;
+    padding-top: 5px;
+  }
+  html body #Home #Bottom .language a,
+  body body #Home #Bottom .language a {
+    color: var(--dVersion-heder);
+  }
+  html body #Home #Bottom .language .amh,
+  body body #Home #Bottom .language .amh {
+    font-family: "Tera";
+  }
+  html body #Home #Bottom a:hover,
+  body body #Home #Bottom a:hover {
+    color: var(--dVersion-heder);
+    border: 1px solid var(--dVersion-heder);
+  }
+  html body #Home #Bottom #Active,
+  body body #Home #Bottom #Active {
+    border: 1px solid var(--background-color);
+    border-radius: 3px;
+    color: var(--background-color);
+    padding: 0 10px;
+  }
+  html body #Home #Bottom #Active:hover,
+  body body #Home #Bottom #Active:hover {
+    color: var(--dVersion-heder);
+    text-decoration: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    background-color: unset;
+  }
+  html body #Home #Bottom .fab,
+  body body #Home #Bottom .fab {
+    width: 25px;
+    margin: 0 8px;
+  }
+  html body #About,
+  body body #About {
+    text-align: center;
+  }
+  html body #Services,
+  body body #Services {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (50%)[3];
+        grid-template-columns: repeat(3, 50%);
+    -ms-grid-rows: 20% 60%;
+        grid-template-rows: 20% 60%;
+    -ms-flex-line-pack: center;
+        align-content: center;
+        grid-template-areas: "header header" "service service";
+  }
+  html body #Services h2,
+  body body #Services h2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: header;
+  }
+  html body #Services .services,
+  body body #Services .services {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: service;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (30%)[3];
+        grid-template-columns: repeat(3, 30%);
+    grid-column-gap: 3.33%;
+    -ms-grid-rows: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "graphic branding webDesign";
+  }
+  html body #Services .services .graphicDesign,
+  html body #Services .services .branding,
+  html body #Services .services .webDesign,
+  body body #Services .services .graphicDesign,
+  body body #Services .services .branding,
+  body body #Services .services .webDesign {
+    border: 1px solid var(--background-color);
+    height: 40%;
+  }
+  html body #Services .services .graphicDesign,
+  body body #Services .services .graphicDesign {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: graphic;
+  }
+  html body #Services .services .branding,
+  body body #Services .services .branding {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: branding;
+  }
+  html body #Services .services .webDesign,
+  body body #Services .services .webDesign {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: webDesign;
+  }
+  html body #Services .services .graphicDesign:hover,
+  html body #Services .services .branding:hover,
+  html body #Services .services .webDesign:hover,
+  body body #Services .services .graphicDesign:hover,
+  body body #Services .services .branding:hover,
+  body body #Services .services .webDesign:hover {
+    background-image: url(../Images/cards-background/card-bg-desktop.svg);
+    border: none;
+    background-size: 100%;
+    height: 100%;
+  }
+  html body #Skills .title,
+  body body #Skills .title {
+    text-align: center;
+  }
+  html body #Skills .skills,
+  body body #Skills .skills {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 45% 45%;
+        grid-template-columns: 45% 45%;
+    -ms-grid-rows: (20%)[3];
+        grid-template-rows: repeat(3, 20%);
+    grid-column-gap: 10%;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    padding: 0 7.5%;
+  }
+  html body #Skills .skills .skilz .skillAndPercent .name,
+  html body #Skills .skills .skilz .skillAndPercent .no,
+  body body #Skills .skills .skilz .skillAndPercent .name,
+  body body #Skills .skills .skilz .skillAndPercent .no {
+    color: var(--background-color);
+  }
+  html body #Skills .skills .skilz .border .bar,
+  body body #Skills .skills .skilz .border .bar {
+    background-color: var(--background-color);
+  }
+  html body #Works,
+  body body #Works {
+    -ms-grid-rows: 15% 75%;
+        grid-template-rows: 15% 75%;
+  }
+  html body #Works .title,
+  body body #Works .title {
+    text-align: center;
+  }
+  html body #Works .showcase,
+  body body #Works .showcase {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: 15% 85%;
+        grid-template-rows: 15% 85%;
+        grid-template-areas: "tabs" "showcase";
+  }
+  html body #Works .showcase .tab,
+  body body #Works .showcase .tab {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: tabs;
+    -ms-grid-columns: 25% 25%;
+        grid-template-columns: 25% 25%;
+  }
+  html body #Works .showcase .tab button,
+  body body #Works .showcase .tab button {
+    border: none;
+    color: var(--background-color);
+  }
+  html body #Works .showcase .tab button:hover,
+  body body #Works .showcase .tab button:hover {
+    color: var(--dVersion-heder);
+  }
+  html body #Works .showcase .tabcontent,
+  body body #Works .showcase .tabcontent {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: showcase;
+  }
+  html body #Works .showcase #graphicDesign,
+  body body #Works .showcase #graphicDesign {
+    height: unset;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    overflow: unset;
+  }
+  html body #Works .showcase #brandingDesign,
+  body body #Works .showcase #brandingDesign {
+    -ms-grid-rows: 50% 50%;
+        grid-template-rows: 50% 50%;
+  }
+  html body #Works .showcase #brandingDesign .col-1 img,
+  body body #Works .showcase #brandingDesign .col-1 img {
+    width: 40%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 60%;
+  }
+  html body #Works .showcase #brandingDesign .col-1 img:hover,
+  body body #Works .showcase #brandingDesign .col-1 img:hover {
+    width: 50%;
+    opacity: 100%;
+  }
+  html body #Works .showcase #brandingDesign .col-2,
+  body body #Works .showcase #brandingDesign .col-2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: col-2;
+  }
+  html body #Works .showcase #brandingDesign .col-2 img,
+  body body #Works .showcase #brandingDesign .col-2 img {
+    width: 40%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 60%;
+  }
+  html body #Works .showcase #brandingDesign .col-2 img:hover,
+  body body #Works .showcase #brandingDesign .col-2 img:hover {
+    width: 50%;
+    opacity: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
